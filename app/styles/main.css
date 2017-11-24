@@ -1,3 +1,47 @@
+html, body {
+    height: 100%;
+}
+
+.main-section {
+  height: 1600px;
+  width: 20%;
+  background-color: lightgray;
+}
+
+.hero-title {
+  margin-top: 0;
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.btn-default{
+  display: block;
+  font-size: 0.8rem;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Chat Rooms list styling  */
+
 ul {
   list-style-type: none;
+}
+
+.room {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  font-family: Helvetica;
+  color: #8b8b92;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }

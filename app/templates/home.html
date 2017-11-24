@@ -1,6 +1,9 @@
-<h1>{{home.appTitle}}</h1>
-<div class='rooms'>
-  <ul class='chat-room-list'>
-    <li ng-repeat='room in home.chatRooms'>{{room.$id}}</li>
-  </ul>
-</div>
+<section class="main-section">
+  <h1 class="hero-title">{{home.appTitle}}</h1>
+  <button type="button" class="btn btn-default" ng-click="home.openNewRoomModal()">New room</button>
+  <div class="chat-rooms">
+    <ul class="chat-room-list">
+      <li class="room" ng-repeat="room in home.chatRooms track by $index">{{chatRooms.$id}}</li>
+    </ul>
+  </div>
+</section>
