@@ -8,10 +8,10 @@
 
     Room.add = function(room) {
         //Use the firebase method $add here
-        Room.all.$add({ room: "room" }).then(function(room) {
+        Room.all.$add(room).then(function(room) {
         var id = room.key;
         console.log("added record with id " + id);
-        list.$indexFor(id); // returns location in the array
+        rooms.$indexFor(id); // returns location in the array
         });
     }
     Room.all.$loaded()

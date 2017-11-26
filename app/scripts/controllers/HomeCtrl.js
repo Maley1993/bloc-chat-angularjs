@@ -1,12 +1,12 @@
 (function() {
     function HomeCtrl($uibModal, $scope, Room) {
-      this.appTitle = "Bloc Chat";
+      $scope.appTitle = "Bloc Chat";
 
       $scope.chatRooms = Room.all;
 
       this.animationsEnabled = false;
 
-      this.openNewRoomModal = function() {
+      $scope.openNewRoomModal = function() {
         $uibModal.open({
           animation: this.animationsEnabled,
           templateUrl: '/templates/NewRoomModal.html',
@@ -17,7 +17,7 @@
         })
       }
       this.showChatRooms = function() {
-        console.log($scope.chatRooms );
+        console.log($scope.chatRooms);
       }
     }
 

@@ -1,7 +1,7 @@
 (function() {
   function ModalCtrl($scope, $uibModalInstance, Room) {
 
-    this.close = function() {
+    $scope.close = function() {
       $uibModalInstance.dismiss('cancel');
     }
 
@@ -11,16 +11,13 @@
       var newRoom = {};
 
       if($scope.text) {
-        newRoom.roomName = this.text;
+        var newRoomName = $scope.text;
+        newRoom.$value = newRoomName;
       }
 
-      console.log(Object.getOwnPropertyNames(newRoom.roomName));
-      return newRoom;
+      Room.add(newRoom);
     }
-
-    this.showProperties = function(){
-      console.log(Object.getOwnPropertyNames($newRoom))
-    }
+    
   }
   angular
     .module('blocChat')

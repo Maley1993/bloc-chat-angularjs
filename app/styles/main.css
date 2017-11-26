@@ -45,3 +45,9 @@ ul {
 .clearfix:after {
     clear: both;
 }
+
+input#submit {
+    border-radius: 5px;
+    border-style: none;
+    height: 2.4rem;
+}
