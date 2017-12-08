@@ -1,10 +1,15 @@
 (function() {
-    function HomeCtrl($uibModal, $scope, Room) {
+    function HomeCtrl($uibModal, $scope, Room, Message) {
+
+      this.animationsEnabled = false;
+
       $scope.appTitle = "Bloc Chat";
 
       $scope.chatRooms = Room.all;
 
-      this.animationsEnabled = false;
+      $scope.activeRoom = null;
+
+      $scope.messages = null;
 
       $scope.openNewRoomModal = function() {
         $uibModal.open({
@@ -16,12 +21,22 @@
           backdrop: false,
         })
       }
-      this.showChatRooms = function() {
+
+      $scope.showObject = function() {
         console.log($scope.chatRooms);
       }
+
+      $scope.setActiveRoom = function() {
+        $scope.activeRoom = this.room;
+        var currentRoomId = $scope.activeRoom.$id;
+
+        $scope.messages = Message.getByRoomId(currentRoomId);
+      };
+
+
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal','$scope','Room',HomeCtrl]);
+        .controller('HomeCtrl', ['$uibModal','$scope','Room','Message',HomeCtrl]);
 })();

@@ -1,11 +1,10 @@
-html, body {
-    height: 100%;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.main-section {
-  height: 1600px;
-  width: 20%;
-  background-color: lightgray;
+body {
+    min-height: 100%;
 }
 
 .hero-title {
@@ -23,10 +22,17 @@ html, body {
   text-align: center;
 }
 
+.floating-box {
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, .5);
+}
+
 /* Chat Rooms list styling  */
 
 ul {
+  padding: 0;
   list-style-type: none;
+
 }
 
 .room {
@@ -34,20 +40,54 @@ ul {
   font-size: 1.2rem;
   font-family: Helvetica;
   color: #8b8b92;
+  cursor: pointer;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
+.room-nav-section {
+  height: -webkit-fill-available;
+  width: 20%;
+  background-color: lightgray;
 }
 
 input#submit {
     border-radius: 5px;
     border-style: none;
     height: 2.4rem;
+}
+
+/* Messaging section styling */
+
+.current-chatroom-name {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.messages {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.messages:nth-child(odd) {
+  background-color: #d3e3f1;
+}
+
+.main-messaging-section {
+    position: absolute;
+    width: 80%;
+    height: -webkit-fill-available;
+}
+
+.message-sent-time {
+  float: right;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.message-sender {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.message-text {
+  font-size: 0.7rem;
 }

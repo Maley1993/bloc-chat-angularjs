@@ -8,16 +8,16 @@
     $scope.text = null;
 
     $scope.createRoom = function() {
-      var newRoom = {};
 
       if($scope.text) {
-        var newRoomName = $scope.text;
-        newRoom.$value = newRoomName;
+        Room.add({
+          '$value': $scope.text
+        });
       }
 
-      Room.add(newRoom);
+      $scope.close();
     }
-    
+
   }
   angular
     .module('blocChat')

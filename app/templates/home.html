@@ -1,9 +1,22 @@
-<section class="main-section">
-  <h1 class="hero-title">{{appTitle}}</h1>
-  <button type="button" class="btn btn-default" ng-click="openNewRoomModal()">New room</button>
-  <div class="chat-rooms">
-    <ul class="chat-room-list">
-      <li class="room" ng-repeat="room in chatRooms track by room.$value">{{room.$value}}</li>
-    </ul>
+<main>
+  <div class="room-nav-section floating-box">
+    <h1 class="hero-title">{{appTitle}}</h1>
+    <button type="button" class="btn btn-default" ng-click="showObject()">New room</button>
+    <div class="chat-rooms">
+      <ul class="chat-room-list">
+        <li class="room" ng-repeat="room in chatRooms" ng-click="setActiveRoom()">{{room.$value}}</li>
+      </ul>
+    </div>
   </div>
-</section>
+  <div class="main-messaging-section floating-box">
+    <h3 class="current-chatroom-name" ng-show="activeRoom">{{activeRoom.$value}}</h3>
+    <div class="message-list-container">
+      <ul class="messages-list">
+        <li class="messages" ng-repeat="message in messages">
+          <h6 class="message-sender">{{message.username}}</h6>
+          <p class="message-text">{{message.content}}<time class="message-sent-time">{{message.sentAt}}</time></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
