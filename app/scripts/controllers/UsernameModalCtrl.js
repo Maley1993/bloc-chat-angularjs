@@ -12,11 +12,11 @@
       if($scope.text) {
         $cookies.put('blocChatCurrentUser', $scope.text);
 
-        console.log($cookies.get('blocChatCurrentUser'))
+        $cookies.getObject('blocChatCurrentUser');
       }
 
       $scope.close();
-    }
+    };
 
 
   }
