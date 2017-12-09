@@ -12,7 +12,6 @@
       if($scope.text) {
         $cookies.put('blocChatCurrentUser', $scope.text);
 
-        $cookies.getObject('blocChatCurrentUser');
       }
 
       $scope.close();
