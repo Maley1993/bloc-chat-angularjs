@@ -1,0 +1,14 @@
+<form ng-submit="setUsername()">
+  <div class="modal-header">
+    <h3 class="modal-title">Set your username</h3>
+  </div>
+  <div class="modal-body">
+    <h5>Enter a username:</h5>
+    <div class="form-group">
+      <input type="text" ng-model="text" name="text" class="form-control" placeholder="username" ng-minlength="1" required>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <input class="btn btn-primary" type="submit" id="submit" value="Set Username"/>
+  </div>
+</form>

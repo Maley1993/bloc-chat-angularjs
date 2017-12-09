@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl($uibModal, $scope, Room, Message) {
+    function HomeCtrl($uibModal, $scope, Room, Message, $cookies) {
 
       this.animationsEnabled = false;
 
@@ -23,7 +23,7 @@
       }
 
       $scope.showObject = function() {
-        console.log($scope.chatRooms);
+        $cookies.remove('blocChatCurrentUser')
       }
 
       $scope.setActiveRoom = function() {
@@ -38,5 +38,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal','$scope','Room','Message',HomeCtrl]);
+        .controller('HomeCtrl', ['$uibModal','$scope','Room','Message','$cookies',HomeCtrl]);
 })();
