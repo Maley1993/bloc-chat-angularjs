@@ -10,6 +10,10 @@
       return $firebaseArray(ref.orderByChild('roomId').equalTo(activeRoomId));
     };
 
+    Message.send = function(newMessage) {
+      
+    };
+
       return Message;
     };
 
