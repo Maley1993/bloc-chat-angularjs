@@ -11,6 +11,10 @@
 
       $scope.messages = null;
 
+      $scope.chatMessage = null;
+
+      $scope.currentDate = Date;
+
       $scope.openNewRoomModal = function() {
         $uibModal.open({
           animation: this.animationsEnabled,
@@ -23,7 +27,7 @@
       }
 
       $scope.showObject = function() {
-        $cookies.remove('blocChatCurrentUser')
+        console.log($cookies.remove('blocChatCurrentUser'));
       }
 
       $scope.setActiveRoom = function() {
@@ -31,6 +35,13 @@
         var currentRoomId = $scope.activeRoom.$id;
 
         $scope.messages = Message.getByRoomId(currentRoomId);
+      };
+
+      $scope.sendMessage = function () {
+        if($scope.chatMessage) {
+          Message.send({'content':$scope.chatMessage, 'username':$cookies.get('blocChatCurrentUser'), 'sentAt': Message.getTime(), 'roomId':$scope.activeRoom.$id});
+        }
+        $scope.chatMessage = null;
       };
 
 
