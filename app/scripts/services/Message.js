@@ -1,5 +1,5 @@
 (function() {
-  function Message($firebaseArray) {
+  function Message($firebaseArray, $cookies) {
     var Message = {};
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
@@ -11,7 +11,20 @@
     };
 
     Message.send = function(newMessage) {
+<<<<<<< HEAD
       
+=======
+      Message.all.$add(newMessage).then(function(newMessage) {
+      var id = newMessage.key;
+      console.log("added record with id " + id);
+      });
+    };
+
+    Message.getTime = function () {
+      var time = new Date();
+      time = time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
+      return time;
+>>>>>>> send-message-functionality
     };
 
       return Message;
@@ -20,5 +33,5 @@
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', Message]);
+    .factory('Message', ['$firebaseArray','$cookies', Message]);
 })();

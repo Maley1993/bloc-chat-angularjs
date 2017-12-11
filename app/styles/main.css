@@ -23,8 +23,10 @@ body {
 }
 
 .floating-box {
-    display: inline-block;
-    border: 2px solid rgba(0, 0, 0, .5);
+  height: 100px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 /* Chat Rooms list styling  */
@@ -67,6 +69,10 @@ input#submit {
   padding: 0.5rem;
 }
 
+.message-list-container {
+  overflow-y: scroll;
+}
+
 .messages:nth-child(odd) {
   background-color: #d3e3f1;
 }
@@ -90,4 +96,30 @@ input#submit {
 
 .message-text {
   font-size: 0.7rem;
+}
+
+.send-message-box {
+  border: 1px solid black;
+  height: 4rem;
+  width: 100%;
+  top: 350px;
+}
+
+.send-message-textarea {
+  width: 80%;
+  height: 4rem;
+}
+
+.send-message-button {
+  background-color: #565454;
+  height: 4rem;
+  width: 20%;
+  position: absolute;
+}
+
+input#submit-message {
+  height: 100%;
+  width: 100%;
+  background-color: #565454;
+  color: white;
 }

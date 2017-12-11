@@ -18,5 +18,13 @@
         </li>
       </ul>
     </div>
+    <div class="send-message-box floating-box" ng-show="activeRoom">
+      <div class="send-message-textarea floating-box">
+        <textarea name="chatMessage" ng-model="chatMessage" placeholder="Write message here..." required="required" class="form-control"></textarea>
+      </div>
+      <div class="send-message-button floating-box">
+        <input class="send-message-button" type="submit" id="submit-message" value="Send" ng-click="sendMessage()"/>
+      </div>
+    </div>
   </div>
 </main>
